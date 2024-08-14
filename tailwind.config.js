@@ -13,7 +13,7 @@ export default {
         'clamp-xl': 'clamp(15rem, 60vw, 30rem)', 
       },
       backgroundSize: {
-        'clamp-bg': 'clamp(450px, 60vw, 1200px)', 
+        'clamp-bg': 'clamp(450px, 40vw, 1500px)', 
       },
       colors: {
         blue: {
