@@ -56,7 +56,6 @@ function App() {
           src={playlist[currentTrack].src}
           showJumpControls={false}
           showSkipControls={true}
-          onPlay={e => console.log("onPlay")}
           onClickNext={handleClickNext}
           onClickPrevious={handleClickPrevious}
           onEnded={handleEnd}
