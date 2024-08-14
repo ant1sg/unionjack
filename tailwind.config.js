@@ -7,11 +7,13 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        sm: ['0.8rem', '1rem'],
-        base: ['1rem', '1.5rem'],
-        lg: ['1.25rem', '1.75rem'],
-        xl: ['1.5rem', '2rem'],
-        '2xl': ['2rem', '2.5rem'],
+        'clamp-xl': 'clamp(1rem, 1vw, 2rem)',
+      },
+      width: {
+        'clamp-xl': 'clamp(15rem, 60vw, 30rem)', 
+      },
+      backgroundSize: {
+        'clamp-bg': 'clamp(450px, 60vw, 1200px)', 
       },
       colors: {
         blue: {

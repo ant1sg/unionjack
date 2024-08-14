@@ -41,12 +41,12 @@ function App() {
   
   return (
     <div className="bg-white h-screen flex flex-col justify-center items-center p-4">
-      <div className='bg-blue-custom  border-2 border-black h-full w-full flex flex-row max-md:flex-col justify-start gap-8 pt-8 items-center bg-orange-image bg-no-repeat bg-right-bottom overflow-scroll'>
+      <div className='bg-blue-custom  border-2 border-black h-full w-full flex flex-row max-md:flex-col justify-start gap-8 pt-8 items-center bg-orange-image bg-clamp-bg bg-no-repeat bg-right-bottom overflow-scroll'>
         <div className='w-2/3 max-md:w-full flex flex-col justify-center items-center'>
           <div className="flex flex-row flex-wrap justify-center w-full">
-            <img src={UJLogo} className="animate-fadeInUp" alt="Union Jack logo" />
+            <img src={UJLogo} className="animate-fadeInUp w-clamp-xl" alt="Union Jack logo" />
           </div>
-          <div className="text-white max-w-prose px-4 animate-fadeIn">
+          <div className="text-white max-w-prose px-4 animate-fadeIn text-clamp-xl">
 
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. 
           </div>
