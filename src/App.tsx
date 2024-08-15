@@ -1,4 +1,4 @@
-import UJLogo from './assets/LogoUJ_White.png'
+import UJLogo from './assets/ujlogo2019-white-web.svg'
 import AcidSerenade from './assets/UnionJack_AcidSerenades.jpg'
 import './App.css'
 import SocialGame from './assets/music/03.mp3';
