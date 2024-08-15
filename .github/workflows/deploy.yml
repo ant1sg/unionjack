@@ -26,6 +26,9 @@ jobs:
       - name: Copy CNAME file
         run: cp CNAME ./dist
 
+      - name: Copy robots file
+        run: cp robots.txt ./dist
+
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
         with:
