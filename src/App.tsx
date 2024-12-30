@@ -1,5 +1,5 @@
-import UJLogo from './assets/ujlogo2019-white-web.svg'
-import AcidSerenade from './assets/UnionJack_AcidSerenades.jpg'
+import UJLogo from './assets/UJ_PromoShot2025.jpg'
+import AcidSerenade from './assets/AcidSerenades_FrontV2-web.jpg'
 import './App.css'
 import SocialGame from './assets/music/03.mp3';
 import Godspeed from './assets/music/01.mp3';
@@ -40,32 +40,38 @@ function App() {
   }
   
   return (
-    <div className="bg-white h-screen flex flex-col justify-center items-center p-4">
-      <div className='bg-blue-custom  border-2 border-black h-full w-full flex flex-row max-md:flex-col justify-start gap-8 pt-8 items-center bg-orange-image bg-clamp-bg bg-no-repeat bg-right-bottom overflow-scroll'>
-        <div className='w-2/3 max-md:w-full flex flex-col justify-center items-center'>
-          <div className="flex flex-row flex-wrap justify-center w-full">
+    <div className="bg-white h-screen flex flex-col justify-center item-s-center p-4">
+      <div className='bg-blue-custom border-2 border-black h-full w-full flex flex-row max-md:flex-col justify-start gap-8 pt-8 items-center bg-[url("./assets/FondBack-noborder.jpg")] bg-cover bg-no-repeat bg-right-bottom overflow-scroll'>
+        <div className='w-1/3 max-md:w-full flex flex-col justify-center items-center'>
+          <div className="flex flex-row flex-wrap justify-end w-full">
             <img src={UJLogo} className="animate-fadeInUp w-clamp-xl" alt="Union Jack logo" />
           </div>
-          <div className="text-white max-w-prose px-4 animate-fadeIn text-clamp-xl">
-
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. 
-          </div>
+          
         </div>
-        <div className='w-1/3 max-md:w-full drop-shadow-xl flex flex-row justify-center animate-fadeInLeft'>
-        <AudioPlayer
-          src={playlist[currentTrack].src}
-          showJumpControls={false}
-          showSkipControls={true}
-          onClickNext={handleClickNext}
+        <div className='w-2/3 max-md:w-full drop-shadow-xl flex flex-col justify-center animate-fadeInLeft'>
+          <div className="text-white py-8 animate-fadeIn text-clamp-xl w-full flex flex-col justify-left items-left ">
+            <div className='w-3/4'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. 
+            </div>
+          </div>
+          <div className='w-5/6 p-4 gap-4 flex flex-row bg-white'>
+            <div className='w-1/4 bg-black p-1 h-full'>             
+              <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-cover'/> 
+            </div>
+            <AudioPlayer
+            src={playlist[currentTrack].src}
+            showJumpControls={false}
+            showSkipControls={true}
+            onClickNext={handleClickNext}
           onClickPrevious={handleClickPrevious}
           onEnded={handleEnd}
           layout="stacked-reverse" 
           customAdditionalControls={[]}
           customVolumeControls={[]} 
           header={
-            <div className='flex flex-col justify-center items-center gap-2'>
-              <img src={AcidSerenade} alt='Acid Serenade' className='w-1/2'/> 
-              <p className="flex flex-row justify-center"><strong>{playlist[currentTrack].title}</strong></p>
+            <div className='flex flex-col justify-center items-center gap-2 w-1/4'>
+              
+              <p className="flex flex-row justify-center uppercase text-clamp-xl "><strong>{playlist[currentTrack].title}</strong></p>
             </div>
         }
           customControlsSection={
@@ -76,19 +82,17 @@ function App() {
            ]}
             style={{
               width: 'clamp(300px, 75%, 1200px)',
-              borderRadius: '20px',
+              minHeight: '100%',
+              display: 'flex',
+              flexDirection: 'column',
               padding: '4em 2em',
-              backgroundColor: '#007db5',
+              backgroundColor: 'black',
               color: 'white',
-              border: '4px solid #e75600',
-              boxShadow: '2px 2px 5px #000000',
-              margin: '2em auto',
-            }} 
+            }}
         />
+          </div>
+      
         </div>
-     
-
-        
       </div>
     </div>
   )
