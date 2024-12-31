@@ -1,6 +1,7 @@
 import UJLogo from './assets/UJ_PromoShot2025.jpg'
 import AcidSerenade from './assets/AcidSerenades_FrontV2-web.jpg'
 import './App.css'
+import Orange from './assets/orange.png'
 import SocialGame from './assets/music/03.mp3';
 import Godspeed from './assets/music/01.mp3';
 import Echoes from './assets/music/02.mp3';
@@ -42,6 +43,10 @@ function App() {
   return (
     <div className="bg-white h-screen flex flex-col justify-center item-s-center p-4">
       <div className='bg-blue-custom border-2 border-black h-full w-full flex flex-row max-md:flex-col justify-start gap-8 pt-8 items-center bg-[url("./assets/FondBack-noborder.jpg")] bg-cover bg-no-repeat bg-right-bottom overflow-scroll'>
+        <div className='absolute bottom-0 right-0'>
+        <img src='{orange}' alt='Orange Overlay' className='absolute bottom-0 right-0' style={{ width: '50px', height: '50px' }} />
+        </div>
+
         <div className='w-1/3 max-md:w-full flex flex-col justify-center items-center'>
           <div className="flex flex-row flex-wrap justify-end w-full">
             <img src={UJLogo} className="animate-fadeInUp w-clamp-xl" alt="Union Jack logo" />
