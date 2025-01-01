@@ -43,9 +43,9 @@ function App() {
   
   return (
     <div className="bg-white h-screen flex flex-col justify-center item-s-center p-4">
-      <div className='bg-blue-custom border-2 border-black h-full w-full flex flex-col max-md:flex-col justify-start bg-[url("./assets/FondBack-noborder.jpg")] bg-cover bg-no-repeat bg-right-bottom'>
+      <div className='bg-blue-custom border-2 border-black h-[75vh] w-full flex flex-col max-md:flex-col justify-start bg-[url("./assets/FondBack-noborder.jpg")] bg-cover bg-no-repeat bg-right-bottom'>
       
-          <div className='h-full w-full bg-[length:50vw] bg-[url("./assets/orange2.png")]  bg-no-repeat bg-right-bottom  flex flex-row max-lg:flex-col justify-start gap-8 lg:pt-8 items-center overflow-scroll'>
+          <div className='w-full bg-[length:50vw] bg-[url("./assets/orange2.png")]  bg-no-repeat bg-right-bottom  flex flex-row max-lg:flex-col justify-start gap-8 lg:pt-8 items-center overflow-scroll'>
 
             <div className='w-1/3 max-lg:w-full flex flex-col justify-center items-center'>
               <div className="flex flex-row flex-wrap justify-end w-full max-lg:hidden">
@@ -55,7 +55,7 @@ function App() {
             <div className='w-1/3 max-lg:w-1/2 max-md:w-full flex flex-col justify-center items-center lg:hidden'>
               <div className=' flex flex-row justify-center flex-wrap justify-start w-full '>
                   <img src={AcidSerenadeTitle} alt='Acid Serenade' className='h-100 z-10'/>
-                  <img src={UJLogo} className="animate-fadeInUp -mt-40 w-1/2 max-lg:w-3/4" alt="Union Jack logo" />
+                  <img src={UJLogo} className="animate-fadeInUp -mt-40 max-lg:-mt-20 w-1/2 max-lg:w-3/4" alt="Union Jack logo" />
                 
               </div>
             </div>
