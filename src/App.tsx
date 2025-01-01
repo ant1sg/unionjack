@@ -2,9 +2,9 @@ import UJLogo from './assets/UJ_PromoShot2025.jpg'
 import AcidSerenade from './assets/AcidSerenades_FrontV2-web.jpg'
 import AcidSerenadeTitle from './assets/AcidSerenades.png'
 import './App.css'
-import SocialGame from './assets/music/03.mp3';
-import Godspeed from './assets/music/01.mp3';
-import Echoes from './assets/music/02.mp3';
+import Epigram from './assets/music/01.mp3';
+import Godspeed from './assets/music/03.mp3';
+import TTC from './assets/music/02.mp3';
 import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import  { useState } from 'react';
@@ -12,9 +12,10 @@ import  { useState } from 'react';
 
 
 const playlist = [
-  { src: SocialGame, title: 'Social Game' },
+  { src: Epigram, title: 'Epigram' },
+  { src: TTC, title: 'Through the cracks' },
   { src: Godspeed, title: 'Godspeed' },
-  { src: Echoes, title: 'Echoes' },
+
 ]
 
 function App() {
