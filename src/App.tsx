@@ -42,10 +42,10 @@ function App() {
   }
   
   return (
-    <div className="bg-white h-screen flex flex-col justify-center item-s-center p-4 flex-col">
-      <div className='flex-grow bg-blue-custom border-2 border-black  w-full flex flex-col max-md:flex-col justify-start bg-[url("./assets/FondBack-noborder.jpg")] bg-cover bg-no-repeat bg-right-bottom'>
+    <div className="bg-white h-screen max-h-screen flex flex-col justify-center item-s-center p-4">
+      <div className='grow bg-blue-custom border-2 border-black  w-full flex flex-col justify-start bg-[url("./assets/FondBack-noborder.jpg")] bg-cover bg-no-repeat bg-right-bottom overflow-auto'>
       
-          <div className='w-full bg-[length:50vw] bg-[url("./assets/orange2.png")]  h-full bg-no-repeat bg-right-bottom  flex flex-row max-lg:flex-col justify-start gap-8 lg:pt-8 items-center overflow-scroll'>
+          <div className='grow bg-[length:50vw] bg-[url("./assets/orange2.png")]  bg-no-repeat bg-right-bottom  flex flex-row max-lg:flex-col justify-start gap-8 lg:pt-8 items-center overflow-auto'>
 
             <div className='w-1/3 max-lg:w-full flex flex-col justify-center items-center'>
               <div className="flex flex-row flex-wrap justify-end w-full max-lg:hidden">
@@ -53,7 +53,7 @@ function App() {
               </div>
             </div>
             <div className='w-1/3 max-lg:w-1/2 max-md:w-full flex flex-col justify-center items-center lg:hidden'>
-              <div className=' flex flex-row justify-center flex-wrap justify-start w-full '>
+              <div className=' flex flex-row justify-center flex-wrap w-full '>
                   <img src={AcidSerenadeTitle} alt='Acid Serenade' className='h-100 z-10'/>
                   <img src={UJLogo} className="animate-fadeInUp -mt-40 max-lg:-mt-20 w-1/2 max-lg:w-3/4" alt="Union Jack logo" />
                 
@@ -78,7 +78,7 @@ function App() {
 
       </div>
       
-      <div className='w-full p-4 gap-4 flex flex-row bg-white animate-fadeInUp h-[20vh]'>
+      <div className='w-full p-4 gap-4 flex flex-row bg-white h-[20vh] grow-0'>
               <div className='w-1/4 p-1 h-full'>             
                 <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-contain'/> 
               </div>
