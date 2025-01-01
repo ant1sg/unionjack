@@ -1,22 +1,35 @@
-  
+@font-face {
+  font-family: 'Anton';
+  src: url('./assets/fonts/Anton-Regular.woff2') format('truetype');
+  font-style: normal;
+}
+
+.font-anton {
+  font-family: 'Anton', sans-serif;
+}
+
+  .rhap_container {
+    box-shadow: unset!important;
+  }
   .rhap_progress-section {
     height: 20px;
     padding-bottom: 20px;
-    color:#edcf6d;
+    color:black;
   }
   .rhap_download-progress {
-    background-color: red;
+    background-color: black;
   }
   .rhap_main-controls-button svg {
-    color: #edcf6d;
+    color: black;
     width: 100%;
     height: 100%;
   }
+
   .rhap_progress-filled,
   .rhap_progress-indicator {
-    background-color: #edcf6d !important;
+    background-color: #007db5 !important;
   }
   
   .rhap_time.rhap_total-time, .rhap_time.rhap_current-time{
-    color:white;
+    color: black;
   }

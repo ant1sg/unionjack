@@ -9,6 +9,9 @@ export default {
       fontSize: {
         'clamp-xl': 'clamp(1rem, 1vw, 2rem)',
       },
+      fontSize: {
+        'clamp-2xl': 'clamp(1.5rem, 1vw, 2.5rem)',
+      },
       width: {
         'clamp-xl': 'clamp(15rem, 60vw, 30rem)', 
       },
