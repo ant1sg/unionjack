@@ -78,7 +78,7 @@ function App() {
 
       </div>
       
-      <div className='w-full p-4 gap-4 flex flex-row bg-white h-[20vh] grow-0'>
+      <div className='w-full p-4 gap-4 flex flex-row bg-white h-[25vh] grow-0'>
               <div className='w-1/4 p-1 h-full'>             
                 <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-contain'/> 
               </div>
