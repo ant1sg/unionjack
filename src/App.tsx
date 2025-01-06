@@ -1,10 +1,11 @@
 import UJLogo from './assets/UJ_PromoShot2025.jpg'
 import AcidSerenade from './assets/AcidSerenades_FrontV2-web.jpg'
-import AcidSerenadeTitle from './assets/AcidSerenades.png'
 import './App.css'
-import Epigram from './assets/music/01.mp3';
-import Godspeed from './assets/music/03.mp3';
-import TTC from './assets/music/02.mp3';
+import Epigram from './assets/music/epigram.mp3';
+import Godspeed from './assets/music/godspeed.mp3';
+import TTC from './assets/music/thecracks.mp3';
+import Distillorama from './assets/music/distillorama.mp3';
+import Idols from './assets/music/idols.mp3';
 import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import  { useState } from 'react';
@@ -12,10 +13,11 @@ import  { useState } from 'react';
 
 
 const playlist = [
+  { src: TTC, title: 'The cracks' },
   { src: Epigram, title: 'Epigram' },
-  { src: TTC, title: 'Through the cracks' },
+  { src: Distillorama, title: 'Distillorama' },
   { src: Godspeed, title: 'Godspeed' },
-
+  { src: Idols, title: 'Idols' },
 ]
 
 function App() {
@@ -45,54 +47,58 @@ function App() {
     <div className="bg-white h-screen flex flex-col justify-center item-s-center p-4 flex-col">
       <div className='flex-grow bg-blue-custom border-2 border-black  w-full flex flex-col max-md:flex-col justify-start bg-[url("./assets/FondBack-noborder.jpg")] bg-cover bg-no-repeat bg-right-bottom'>
       
-          <div className='w-full bg-[length:50vw] bg-[url("./assets/orange2.png")]  h-full bg-no-repeat bg-right-bottom  flex flex-row max-lg:flex-col justify-start gap-8 lg:pt-8 items-center overflow-scroll'>
-
-            <div className='w-1/3 max-lg:w-full flex flex-col justify-center items-center'>
-              <div className="flex flex-row flex-wrap justify-end w-full max-lg:hidden">
-                <img src={UJLogo} className="animate-fadeInUp w-clamp-xl" alt="Union Jack logo" />
-              </div>
-            </div>
-            <div className='w-1/3 max-lg:w-1/2 max-md:w-full flex flex-col justify-center items-center lg:hidden'>
-              <div className=' flex flex-row justify-center flex-wrap justify-start w-full '>
-                  <img src={AcidSerenadeTitle} alt='Acid Serenade' className='h-100 z-10'/>
-                  <img src={UJLogo} className="animate-fadeInUp -mt-40 max-lg:-mt-20 w-1/2 max-lg:w-3/4" alt="Union Jack logo" />
+          <div className='w-full bg-[length:50vw] bg-[url("./assets/orange2.png")]  h-full bg-no-repeat bg-right-bottom  flex flex-row  gap-8 lg:pt-8 items-center overflow-scroll justify-center '>
+            
+              <div className="flex flex-row gap-4 w-3/4 justify-center items-center">
+                <div className="w-1/2">                
+                  <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-contain'/> 
+                </div>
+                <div className="w-1/2 flex flex-col justify-left items-left align-left">
+                  <div className='p-4 justify-center uppercase text-clamp-3xl font-anton text-white'>
+                    <p>Listen to five songs from our upcoming album, Acid Serenades</p>
+                  </div>
+                  
+                  <div className="p-4 align-left list-none">
+                    {playlist.map((track, index) => (
+                      <li>
+                        <button
+                        key={index}
+                        onClick={() => setTrackIndex(index)}
+                        className="text-white hover:text-gray-200 font-anton uppercase text-xl"
+                      >
+                        {track.title}
+                      </button>
+                      </li>
+                    ))}
+                  
+                  </div>
+                </div>
                 
               </div>
+
+      
             </div>
 
-          <div className='w-2/3 max-lg:w-full drop-shadow-xl flex flex-col justify-center animate-fadeInLeft'>
-            <div className="text-white lg:py-8 animate-fadeIn text-clamp-xl w-full flex flex-col justify-left items-left ">
-              <div className=' w-3/4 max-lg:w-full'>
-                <div className='w-full flex flex-row justify-start  max-lg:hidden'>
-                  <img src={AcidSerenadeTitle} alt='Acid Serenade' className='h-100'/>
-                </div>
-              <div className='text-clamp-xl p-4'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis. Aperiam, accusamus nobis explicabo fugit odit ut obcaecati illo ducimus perspiciatis, autem, ratione facere laudantium aliquid libero sint nam iure. </p></div>
-              </div>
-            </div>
-
-           
-        
-          </div>
-
-        </div>
 
       </div>
       
       <div className='w-full p-4 gap-4 flex flex-row bg-white animate-fadeInUp h-[20vh]'>
-              <div className='w-1/4 p-1 h-full'>             
-                <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-contain'/> 
-              </div>
-            
+            <div className='w-1/4 '> <img src={UJLogo} className="max-w-[300px]" alt="Union Jack logo" /></div>
+                    
               <AudioPlayer
+              
+                autoPlay={true}
+                autoPlayAfterSrcChange={true}
                 src={playlist[currentTrack].src}
                 showJumpControls={false}
                 showSkipControls={true}
                 onClickNext={handleClickNext}
                 onClickPrevious={handleClickPrevious}
                 onEnded={handleEnd}
-                layout="stacked-reverse" 
+                layout="stacked-reverse"
                 customAdditionalControls={[]}
                 customVolumeControls={[]} 
+                
                 header={
                   <div className='flex flex-col justify-center items-center gap-2 w-full'>
                     <p className="flex flex-row justify-center uppercase text-clamp-2xl font-anton">{playlist[currentTrack].title}</p>
@@ -105,11 +111,9 @@ function App() {
                     RHAP_UI.VOLUME_CONTROLS,
                   ]}
                   style={{
-                    width: 'clamp(300px, 75%, 1200px)',
+
                     minHeight: '100%',
-                    height: '200px',
-                    display: 'flex',
-                    flexDirection: 'column',
+                   
                     padding: '1em 2em',
                     backgroundColor: 'white',
                     color: 'black',
