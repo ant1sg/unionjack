@@ -55,7 +55,7 @@ function App() {
                 </div>
                 <div className="w-1/2 flex flex-col justify-left items-left align-left">
                   <div className='p-4 justify-center uppercase text-clamp-3xl font-anton text-white'>
-                    <p>Listen to five songs from our upcoming album, Acid Serenades</p>
+                    <p>Listen to five songs from our upcoming album</p>
                   </div>
                   
                   <div className="p-4 align-left list-none">
