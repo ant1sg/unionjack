@@ -44,8 +44,8 @@ function App() {
   }
   
   return (
-    <div className="bg-white h-screen flex flex-col justify-center item-s-center p-4 flex-col">
-      <div className='flex-grow bg-blue-custom border-2 border-black  w-full flex flex-col max-md:flex-col justify-start bg-[url("./assets/FondBack-noborder.jpg")] bg-cover bg-no-repeat bg-right-bottom'>
+    <div className="bg-white h-screen max-h-screen flex flex-col justify-center item-s-center p-4">
+      <div className='grow bg-blue-custom border-2 border-black  w-full flex flex-col justify-start bg-[url("./assets/FondBack-noborder.jpg")] bg-cover bg-no-repeat bg-right-bottom overflow-auto'>
       
           <div className='w-full bg-[length:50vw] bg-[url("./assets/orange2.png")]  h-full bg-no-repeat bg-right-bottom  flex flex-row  gap-8 lg:pt-8 items-center overflow-scroll justify-center '>
             
