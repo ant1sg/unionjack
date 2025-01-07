@@ -8,7 +8,7 @@ import Distillorama from './assets/music/distillorama.mp3';
 import Idols from './assets/music/idols.mp3';
 import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-import  { useState } from 'react';
+import  { useState, useEffect } from 'react';
 
 
 
@@ -21,19 +21,66 @@ const playlist = [
 ]
 
 function App() {
+ 
   const [currentTrack, setTrackIndex] = useState(0)
+
+  // Initialize Matomo Tag Manager
+  useEffect(() => {
+    window._mtm = window._mtm || [];
+    window._mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://matomo.asg-dev.fr/js/container_AlpCy5sO.js';
+    document.head.appendChild(script);
+  }, []);
+
+  // Track song changes
+  const handleClickTrack = (index: number) => {
+    console.log("Playing song "+index);
+    
+    setTrackIndex(index);
+    // Force replay if same track
+    if (index === currentTrack) {
+      const audioElement = document.getElementsByClassName('rhap_main-controls-button')[1] as HTMLButtonElement;
+      const isPlaying = audioElement?.getAttribute('aria-label') === 'Pause';
+      
+      if (audioElement && !isPlaying) {
+        audioElement.click();
+        // Push track change event to Matomo
+        window._mtm.push({
+          'event': 'songChange',
+          'songTitle': playlist[index].title
+        });
+      }
+    }
+    else{
+      // Push track change event to Matomo
+      window._mtm.push({
+        'event': 'songChange',
+        'songTitle': playlist[index].title
+      });
+    }
+    
+  }
+
+  // Track next/previous clicks
   const handleClickNext = () => {
-      console.log('click next')
-        setTrackIndex((currentTrack) =>
-            currentTrack < playlist.length - 1 ? currentTrack + 1 : 0
-        );
-    };
-  
+    const nextIndex = currentTrack < playlist.length - 1 ? currentTrack + 1 : 0;
+    window._mtm.push({
+      'event': 'nextSong',
+      'songTitle': playlist[nextIndex].title
+    });
+    setTrackIndex(nextIndex);
+  };
+
   const handleClickPrevious = () => {
-    console.log('click previous')
-      setTrackIndex((currentTrack) =>
-          currentTrack > 0 ? currentTrack - 1 : playlist.length - 1
-      );
+    const prevIndex = currentTrack > 0 ? currentTrack - 1 : playlist.length - 1;
+    window._mtm.push({
+      'event': 'previousSong',
+      'songTitle': playlist[prevIndex].title
+    });
+    setTrackIndex(prevIndex);
   };
   
   const handleEnd = () => {
@@ -42,19 +89,19 @@ function App() {
             currentTrack < playlist.length - 1 ? currentTrack + 1 : 0
         );
   }
-  
+
   return (
     <div className="bg-white h-screen max-h-screen flex flex-col justify-center item-s-center p-4">
       <div className='grow bg-blue-custom border-2 border-black  w-full flex flex-col justify-start bg-[url("./assets/FondBack-noborder.jpg")] bg-cover bg-no-repeat bg-right-bottom overflow-auto'>
       
           <div className='w-full bg-[length:50vw] bg-[url("./assets/orange2.png")]  h-full bg-no-repeat bg-right-bottom  flex flex-row  gap-8 lg:pt-8 items-center overflow-scroll justify-center '>
             
-              <div className="flex flex-row gap-4 w-3/4 justify-center items-center">
-                <div className="w-1/2">                
+              <div className="flex flex-row max-md:flex-col gap-4 w-3/4 justify-center items-center">
+                <div className="w-1/2 max-md:w-full">                
                   <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-contain'/> 
                 </div>
-                <div className="w-1/2 flex flex-col justify-left items-left align-left">
-                  <div className='p-4 justify-center uppercase text-clamp-3xl font-anton text-white'>
+                <div className="w-1/2 max-md:w-full flex flex-col justify-left items-left align-left">
+                  <div className='p-4 justify-center uppercase text-clamp-4xl font-anton text-white leading-[1.2] max-lg:text-[1.5rem]'>
                     <p>Listen to five songs from our upcoming album</p>
                   </div>
                   
@@ -63,10 +110,10 @@ function App() {
                       <li>
                         <button
                         key={index}
-                        onClick={() => setTrackIndex(index)}
-                        className="text-white hover:text-gray-200 font-anton uppercase text-xl"
-                      >
-                        {track.title}
+                        onClick={() => handleClickTrack(index)} >
+                          <p className={`${index===currentTrack ? 'text-yellow-custom' : 'text-white' } hover:text-yellow-custom font-anton uppercase text-[2rem] leading-8  `}>
+                          
+                       {index+1} - {track.title}</p>
                       </button>
                       </li>
                     ))}
@@ -83,12 +130,11 @@ function App() {
       </div>
       
       <div className='w-full p-4 gap-4 flex flex-row bg-white animate-fadeInUp h-[20vh]'>
-            <div className='w-1/4 '> <img src={UJLogo} className="max-w-[300px]" alt="Union Jack logo" /></div>
+            <div className='w-1/4 flex items-center'> <img src={UJLogo} className="max-w-[300px] object-contain w-full" alt="Union Jack logo" /></div>
                     
               <AudioPlayer
               
                 autoPlay={true}
-                autoPlayAfterSrcChange={true}
                 src={playlist[currentTrack].src}
                 showJumpControls={false}
                 showSkipControls={true}

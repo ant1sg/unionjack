@@ -13,7 +13,10 @@ export default {
         'clamp-2xl': 'clamp(1.5rem, 1vw, 2.5rem)',
       },
       fontSize: {
-        'clamp-3xl': 'clamp(2rem, 1vw, 4rem)',
+        'clamp-3xl': 'clamp(4rem, 2vw, 8rem)',
+      },
+      fontSize: {
+        'clamp-4xl': 'clamp(4rem, 1vw, 6rem)',
       },
       width: {
         'clamp-xl': 'clamp(15rem, 60vw, 30rem)', 
@@ -24,6 +27,9 @@ export default {
       colors: {
         blue: {
           custom: '#007db5',
+        },
+        yellow: {
+          custom: '#f1cc6e',
         },
       },
       keyframes: {
