@@ -31,7 +31,7 @@ function App() {
 
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://matomo.asg-dev.fr/js/container_AlpCy5sO.js';
+    script.src = 'https://matomo.asg-dev.fr/js/container_AkTkZi46.js';
     document.head.appendChild(script);
   }, []);
 
@@ -129,8 +129,8 @@ function App() {
 
       </div>
       
-      <div className='w-full p-4 gap-4 flex flex-row bg-white animate-fadeInUp h-[20vh]'>
-            <div className='w-1/4 flex items-center'> <img src={UJLogo} className="max-w-[300px] object-contain w-full" alt="Union Jack logo" /></div>
+      <div className='w-full p-4 max-md:p-1 gap-4 flex flex-row bg-white animate-fadeInUp h-[20vh]'>
+            <div className='w-1/4 max-md:w-1/3 flex items-center'> <img src={UJLogo} className="max-w-[300px] object-contain w-full" alt="Union Jack logo" /></div>
                     
               <AudioPlayer
               
