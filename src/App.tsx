@@ -100,8 +100,9 @@ function App() {
                 <div className="w-1/2 max-md:w-full">                
                   <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-contain'/> 
                 </div>
-                <div className="w-1/2 max-md:w-full flex flex-col justify-left items-left align-left">
-                  <div className='p-4 justify-center uppercase text-clamp-4xl font-anton text-white leading-[1.2] max-lg:text-[1.5rem]'>
+                
+                <div className="w-1/2 max-md:w-full flex flex-col justify-left items-left align-left h-full justify-between grow" >
+                  <div className='p-4 justify-center uppercase text-clamp-4xl font-anton text-white leading-[1.2] max-lg:text-[1.5rem] max-md:text-[1rem]'>
                     <p>Listen to five songs from our upcoming album</p>
                   </div>
                   
@@ -111,13 +112,24 @@ function App() {
                         <button
                         key={index}
                         onClick={() => handleClickTrack(index)} >
-                          <p className={`${index===currentTrack ? 'text-yellow-custom' : 'text-white' } hover:text-yellow-custom font-anton uppercase text-[2rem] leading-8  `}>
+                          <p className={`${index===currentTrack ? 'text-yellow-custom' : 'text-white' } hover:text-yellow-custom font-anton uppercase text-[2rem] leading-8 max-md:text-[2rem] max-md:leading-6 `}>
                           
                        {index+1} - {track.title}</p>
                       </button>
                       </li>
                     ))}
                   
+                  </div>
+                  <div className='h-full flex items-end mt-20 max-md:mt-5 max-md:justify-center'>
+                    <button 
+                      onClick={() => window.location.href = 'mailto:unionjackpunx@gmail.com'}
+                      className=' border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase text-[2rem] max-md:text-[1.5rem] leading-8 flex items-center gap-2'
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                      </svg>
+                      <p className='leading-8'>Contact us</p>
+                    </button>
                   </div>
                 </div>
                 
@@ -130,7 +142,7 @@ function App() {
       </div>
       
       <div className='w-full p-4 max-md:p-1 gap-4 flex flex-row bg-white animate-fadeInUp h-[20vh]'>
-            <div className='w-1/4 max-md:w-1/3 flex items-center'> <img src={UJLogo} className="max-w-[300px] object-contain w-full" alt="Union Jack logo" /></div>
+            <div className='w-1/4 max-md:w-1/3 flex items-center'> <img src={UJLogo} className="max-w-[300px] h-full object-contain w-full" alt="Union Jack logo" /></div>
                     
               <AudioPlayer
               
