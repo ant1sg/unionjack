@@ -18,11 +18,11 @@ import idols from './assets/idols.jpg';
 
 
 const playlist = [
-  { src: TTC, title: 'The cracks',image:thecracks},
-  { src: Epigram, title: 'Epigram',image:epigram },
-  { src: Distillorama, title: 'Distillorama',image:distillorama },
-  { src: Godspeed, title: 'Godspeed',image:godspeed },
-  { src: Idols, title: 'Idols',image:idols },
+  { src: TTC, title: 'The cracks',image:thecracks,alt:'The cracks cover artwork. A black and white photo of an old lady in a jumper swater holding her face in her hands. '},
+  { src: Epigram, title: 'Epigram',image:epigram,alt:'Epigram cover artwork. A black and white photo of a cross shaped gravestone in a forest' },
+  { src: Distillorama, title: 'Distillorama',image:distillorama,alt:'Distillorama cover artwork. An old black Favorit typewriter on a white background' },
+  { src: Godspeed, title: 'Godspeed',image:godspeed,alt:'Godspeed cover artwork. A purple rose lying on sheets of paper. The colors seems to be ultra-violet' },
+  { src: Idols, title: 'Idols',image:idols,alt:'Idols cover artwork. A sepia toned picture of a topless tattooed man getting a tattoo on his left arm. ' },
 ]
 
 function App() {
@@ -116,20 +116,21 @@ function App() {
       
           <div className='w-full bg-[length:50vw] bg-[url("./assets/orange2.png")]  h-full bg-no-repeat bg-right-bottom  flex flex-row  gap-8 lg:pt-8 items-center overflow-scroll justify-center '>
             
-              <div className="flex flex-row max-md:flex-col gap-4 w-3/4 justify-center items-center">
+              <div className={`flex ${singleTrack ? 'flex-col' : 'flex-row'} gap-4 w-3/4 justify-center items-center`}>
                 <div className="w-1/2 max-md:w-full">
-                {singleTrack && <img src={loadedPlaylist[0].image} alt={`${loadedPlaylist[0].title} single cover artwork`} className='w-full h-full object-contain'/>}
+                {singleTrack && <img src={loadedPlaylist[0].image} alt={`${loadedPlaylist[0].alt}`} className='w-full h-full object-contain'/>}
                 {!singleTrack && <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-contain'/>}
                 </div>
-                
                 <div className="w-1/2 max-md:w-full flex flex-col justify-left items-left align-left h-full justify-between grow" >
-                  <div className='p-4 justify-center uppercase text-clamp-4xl font-anton text-white leading-[1.2] max-lg:text-[1.5rem] max-md:text-[1rem]'>
-                    {singleTrack ? <p>Listen to {loadedPlaylist[0].title}</p> : <p>Listen to five songs from our upcoming album</p>}
+                {!singleTrack &&
+
+                  <><div className='p-4 justify-center uppercase text-clamp-4xl font-anton text-white leading-[1.2] max-lg:text-[1.5rem] max-md:text-[1rem]'>
+                    <p>Listen to five songs from our upcoming album</p>
                   </div>
-                  {!singleTrack && <div className="p-4 align-left list-none">
+                   <div className="p-4 align-left list-none">
                     <ul>
                     {loadedPlaylist.map((track, index) => (
-                      <li>
+                      <li key={index}>
                         <button
                         key={index}
                         onClick={() => handleClickTrack(index)} >
@@ -141,8 +142,8 @@ function App() {
                     ))}
                     </ul>
                   
-                  </div>}
-                  <div className='h-full flex items-end mt-20 max-md:mt-5 max-md:justify-center'>
+                  </div></>}
+                  <div className={`h-full flex items-end mt-20 max-md:mt-5 ${singleTrack ? 'justify-center' :'max-md:justify-center'}`}>
                     <button 
                       onClick={clickContact}
                       className='hover:text-yellow-custom hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase text-[2rem] 
@@ -155,6 +156,8 @@ function App() {
                     </button>
                   </div>
                 </div>
+                
+                
                 
               </div>
 
