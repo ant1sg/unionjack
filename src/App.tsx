@@ -23,7 +23,9 @@ const playlist = [
 function App() {
  
   const [currentTrack, setTrackIndex] = useState(0)
-
+  const [loadedPlaylist, setLoadedPlaylist] = useState(playlist)
+  const [singleTrack, setSingleTrack] = useState(false)
+  
   // Initialize Matomo Tag Manager
   useEffect(() => {
     window._mtm = window._mtm || [];
@@ -33,6 +35,13 @@ function App() {
     script.async = true;
     script.src = 'https://matomo.asg-dev.fr/js/container_AkTkZi46.js';
     document.head.appendChild(script);
+
+    const params = new URLSearchParams(window.location.search);
+    const trackParam = params.get('track');
+    if (trackParam !== null && trackParam !== undefined && parseInt(trackParam) >= 1 && parseInt(trackParam) <= 5 ) {
+      setLoadedPlaylist(playlist.slice(parseInt(trackParam)-1,parseInt(trackParam)));
+      setSingleTrack(true);
+    }
   }, []);
 
   // Track song changes
@@ -50,7 +59,7 @@ function App() {
         // Push track change event to Matomo
         window._mtm.push({
           'event': 'songChange',
-          'songTitle': playlist[index].title
+          'songTitle': loadedPlaylist[index].title
         });
       }
     }
@@ -58,7 +67,7 @@ function App() {
       // Push track change event to Matomo
       window._mtm.push({
         'event': 'songChange',
-        'songTitle': playlist[index].title
+        'songTitle': loadedPlaylist[index].title
       });
     }
     
@@ -75,16 +84,16 @@ function App() {
     const nextIndex = currentTrack < playlist.length - 1 ? currentTrack + 1 : 0;
     window._mtm.push({
       'event': 'nextSong',
-      'songTitle': playlist[nextIndex].title
+      'songTitle': loadedPlaylist[nextIndex].title
     });
     setTrackIndex(nextIndex);
   };
 
   const handleClickPrevious = () => {
-    const prevIndex = currentTrack > 0 ? currentTrack - 1 : playlist.length - 1;
+    const prevIndex = currentTrack > 0 ? currentTrack - 1 : loadedPlaylist.length - 1;
     window._mtm.push({
       'event': 'previousSong',
-      'songTitle': playlist[prevIndex].title
+      'songTitle': loadedPlaylist[prevIndex].title
     });
     setTrackIndex(prevIndex);
   };
@@ -92,7 +101,7 @@ function App() {
   const handleEnd = () => {
     console.log('end')
     setTrackIndex((currentTrack) =>
-            currentTrack < playlist.length - 1 ? currentTrack + 1 : 0
+            currentTrack < loadedPlaylist.length - 1 ? currentTrack + 1 : 0
         );
   }
 
@@ -109,11 +118,11 @@ function App() {
                 
                 <div className="w-1/2 max-md:w-full flex flex-col justify-left items-left align-left h-full justify-between grow" >
                   <div className='p-4 justify-center uppercase text-clamp-4xl font-anton text-white leading-[1.2] max-lg:text-[1.5rem] max-md:text-[1rem]'>
-                    <p>Listen to five songs from our upcoming album</p>
+                    {singleTrack ? <p>Listen to {loadedPlaylist[0].title}</p> : <p>Listen to five songs from our upcoming album</p>}
                   </div>
-                  
-                  <div className="p-4 align-left list-none">
-                    {playlist.map((track, index) => (
+                  {!singleTrack && <div className="p-4 align-left list-none">
+                    <ul>
+                    {loadedPlaylist.map((track, index) => (
                       <li>
                         <button
                         key={index}
@@ -124,8 +133,9 @@ function App() {
                       </button>
                       </li>
                     ))}
+                    </ul>
                   
-                  </div>
+                  </div>}
                   <div className='h-full flex items-end mt-20 max-md:mt-5 max-md:justify-center'>
                     <button 
                       onClick={clickContact}
@@ -154,19 +164,19 @@ function App() {
               <AudioPlayer
               
                 autoPlay={true}
-                src={playlist[currentTrack].src}
+                src={loadedPlaylist[currentTrack].src}
                 showJumpControls={false}
-                showSkipControls={true}
+                showSkipControls={!singleTrack}
                 onClickNext={handleClickNext}
                 onClickPrevious={handleClickPrevious}
                 onEnded={handleEnd}
                 layout="stacked-reverse"
                 customAdditionalControls={[]}
-                customVolumeControls={[]} 
+                customVolumeControls={[]}
                 
                 header={
                   <div className='flex flex-col justify-center items-center gap-2 w-full'>
-                    <p className="flex flex-row justify-center uppercase text-clamp-2xl font-anton">{playlist[currentTrack].title}</p>
+                    <p className="flex flex-row justify-center uppercase text-clamp-2xl font-anton">{loadedPlaylist[currentTrack].title}</p>
                   </div>
                 }
                 customControlsSection={
