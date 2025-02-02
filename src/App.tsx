@@ -9,15 +9,20 @@ import Idols from './assets/music/idols.mp3';
 import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import  { useState, useEffect } from 'react';
+import thecracks from './assets/thecracks.jpg';
+import epigram from './assets/epigram.jpg';
+import distillorama from './assets/distillorama.jpg';
+import godspeed from './assets/godspeed.jpg';
+import idols from './assets/idols.jpg';
 
 
 
 const playlist = [
-  { src: TTC, title: 'The cracks' },
-  { src: Epigram, title: 'Epigram' },
-  { src: Distillorama, title: 'Distillorama' },
-  { src: Godspeed, title: 'Godspeed' },
-  { src: Idols, title: 'Idols' },
+  { src: TTC, title: 'The cracks',image:thecracks},
+  { src: Epigram, title: 'Epigram',image:epigram },
+  { src: Distillorama, title: 'Distillorama',image:distillorama },
+  { src: Godspeed, title: 'Godspeed',image:godspeed },
+  { src: Idols, title: 'Idols',image:idols },
 ]
 
 function App() {
@@ -112,8 +117,9 @@ function App() {
           <div className='w-full bg-[length:50vw] bg-[url("./assets/orange2.png")]  h-full bg-no-repeat bg-right-bottom  flex flex-row  gap-8 lg:pt-8 items-center overflow-scroll justify-center '>
             
               <div className="flex flex-row max-md:flex-col gap-4 w-3/4 justify-center items-center">
-                <div className="w-1/2 max-md:w-full">                
-                  <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-contain'/> 
+                <div className="w-1/2 max-md:w-full">
+                {singleTrack && <img src={loadedPlaylist[0].image} alt={`${loadedPlaylist[0].title} single cover artwork`} className='w-full h-full object-contain'/>}
+                {!singleTrack && <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-contain'/>}
                 </div>
                 
                 <div className="w-1/2 max-md:w-full flex flex-col justify-left items-left align-left h-full justify-between grow" >
