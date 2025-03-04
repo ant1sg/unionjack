@@ -1,11 +1,15 @@
 import UJLogo from './assets/UJ_PromoShot2025.jpg'
 import AcidSerenade from './assets/AcidSerenades_FrontV2-web.jpg'
 import './App.css'
-import Epigram from './assets/music/epigram.mp3';
-import Godspeed from './assets/music/godspeed.mp3';
-import TTC from './assets/music/thecracks.mp3';
-import Distillorama from './assets/music/distillorama.mp3';
-import Idols from './assets/music/idols.mp3';
+import Epigram from './assets/music/03_EPIGRAM_streaming.mp3';
+import Godspeed from './assets/music/02_GODSPEED_streaming.mp3';
+import TTC from './assets/music/01_THE CRACKS_streaming.mp3';
+import Distillorama from './assets/music/06_DISTILLORAMA_streaming.mp3';
+import Idols from './assets/music/04_IDOLS_streaming.mp3';
+import SocialGame from './assets/music/05_SOCIAL GAME_streaming.mp3';
+import GoldAndDiamonds from './assets/music/07_GOLD-AND-DIAMONDS_streaming.mp3';
+import DissonantRadio from './assets/music/08_DISSONANT RADIO_streaming.mp3';
+import Medusa from './assets/music/09_MEDUSA_streaming.mp3';
 import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import  { useState, useEffect } from 'react';
@@ -19,10 +23,14 @@ import idols from './assets/idols.jpg';
 
 const playlist = [
   { src: TTC, title: 'The cracks',image:thecracks,alt:'The cracks cover artwork. A black and white photo of an old lady in a jumper swater holding her face in her hands. '},
-  { src: Epigram, title: 'Epigram',image:epigram,alt:'Epigram cover artwork. A black and white photo of a cross shaped gravestone in a forest' },
-  { src: Distillorama, title: 'Distillorama',image:distillorama,alt:'Distillorama cover artwork. An old black Favorit typewriter on a white background' },
   { src: Godspeed, title: 'Godspeed',image:godspeed,alt:'Godspeed cover artwork. A purple rose lying on sheets of paper. The colors seems to be ultra-violet' },
+  { src: Epigram, title: 'Epigram',image:epigram,alt:'Epigram cover artwork. A black and white photo of a cross shaped gravestone in a forest' },
   { src: Idols, title: 'Idols',image:idols,alt:'Idols cover artwork. A sepia toned picture of a topless tattooed man getting a tattoo on his left arm. ' },
+  { src: SocialGame, title: 'Social Game',image:AcidSerenade,alt:'Acid Serenade cover artwork.'},
+  { src: Distillorama, title: 'Distillorama',image:distillorama,alt:'Distillorama cover artwork. An old black Favorit typewriter on a white background' },
+  { src: GoldAndDiamonds, title: 'Gold and Diamonds',image:AcidSerenade,alt:'' },
+  { src: DissonantRadio, title: 'Dissonant Radio',image:AcidSerenade,alt:'' },
+  { src: Medusa, title: 'Medusa',image:AcidSerenade,alt:'' },
 ]
 
 function App() {
@@ -125,7 +133,7 @@ function App() {
                 {!singleTrack &&
 
                   <><div className='p-4 justify-center uppercase text-clamp-4xl font-anton text-white leading-[1.2] max-lg:text-[1.5rem] max-md:text-[1rem]'>
-                    <p>Listen to five songs from our upcoming album</p>
+                    <p>Listen to our upcoming album "Acid Serenades"</p>
                   </div>
                    <div className="p-4 align-left list-none">
                     <ul>
