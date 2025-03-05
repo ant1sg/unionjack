@@ -124,8 +124,8 @@ function App() {
       
           <div className='w-full bg-[length:50vw] bg-[url("./assets/orange2.png")]  h-full bg-no-repeat bg-right-bottom  flex flex-row  gap-8 lg:pt-8 items-center overflow-scroll justify-center '>
             
-              <div className={`flex ${singleTrack ? 'flex-col' : 'flex-row'} gap-4 w-3/4 justify-center items-center`}>
-                <div className="w-1/2 max-md:w-full">
+              <div className={`flex ${singleTrack ? 'flex-col' : 'flex-row'} max-md:flex-col gap-4 w-3/4 justify-center items-center`}>
+                <div className="w-1/2 ">
                 {singleTrack && <img src={loadedPlaylist[0].image} alt={`${loadedPlaylist[0].alt}`} className='w-full h-full object-contain'/>}
                 {!singleTrack && <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-contain'/>}
                 </div>
@@ -142,7 +142,7 @@ function App() {
                         <button
                         key={index}
                         onClick={() => handleClickTrack(index)} >
-                          <p className={`${index===currentTrack ? 'text-yellow-custom' : 'text-white' } hover:text-yellow-custom font-anton uppercase text-[2rem] leading-8 max-md:text-[2rem] max-md:leading-6 `}>
+                          <p className={`${index===currentTrack ? 'text-yellow-custom' : 'text-white' } hover:text-yellow-custom font-anton uppercase text-[2rem] leading-8 max-md:text-[2rem]  max-md:text-[1rem] max-md:leading-6 `}>
                           
                        {index+1} - {track.title}</p>
                       </button>
