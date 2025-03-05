@@ -28,7 +28,7 @@ const playlist = [
   { src: Idols, title: 'Idols',image:idols,alt:'Idols cover artwork. A sepia toned picture of a topless tattooed man getting a tattoo on his left arm. ' },
   { src: SocialGame, title: 'Social Game',image:AcidSerenade,alt:'Acid Serenade cover artwork.'},
   { src: Distillorama, title: 'Distillorama',image:distillorama,alt:'Distillorama cover artwork. An old black Favorit typewriter on a white background' },
-  { src: GoldAndDiamonds, title: 'Gold and Diamonds',image:AcidSerenade,alt:'' },
+  { src: GoldAndDiamonds, title: 'Gold & Diamonds',image:AcidSerenade,alt:'' },
   { src: DissonantRadio, title: 'Dissonant Radio',image:AcidSerenade,alt:'' },
   { src: Medusa, title: 'Medusa',image:AcidSerenade,alt:'' },
 ]
@@ -142,7 +142,7 @@ function App() {
                         <button
                         key={index}
                         onClick={() => handleClickTrack(index)} >
-                          <p className={`${index===currentTrack ? 'text-yellow-custom' : 'text-white' } hover:text-yellow-custom font-anton uppercase text-[2rem] leading-8 max-md:text-[2rem]  max-md:text-[1rem] max-md:leading-6 `}>
+                          <p className={`${index===currentTrack ? 'text-yellow-custom' : 'text-white' } hover:text-yellow-custom font-anton uppercase text-[2rem] leading-8 max-md:text-[1rem] max-md:leading-6 `}>
                           
                        {index+1} - {track.title}</p>
                       </button>
