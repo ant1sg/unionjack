@@ -18,11 +18,11 @@ import epigram from './assets/epigram.jpg';
 import distillorama from './assets/distillorama.jpg';
 import godspeed from './assets/godspeed.jpg';
 import idols from './assets/idols.jpg';
-
+import { FaSpotify, FaApple, FaYoutube, FaDeezer } from 'react-icons/fa';
 
 
 const playlist = [
-  { src: TTC, title: 'The cracks',image:thecracks,alt:'The cracks cover artwork. A black and white photo of an old lady in a jumper swater holding her face in her hands. '},
+  { src: TTC, title: 'The cracks',image:thecracks,alt:'The cracks cover artwork. A black and white photo of an old lady in a jumper swater holding her face in her hands. ',links:[{'youtube':'https://www.youtube.com/watch?v=dQw4w9WgXcQ'},{'spotify':'https://open.spotify.com/album/0yo0RJjJHAjv5vNsQ9tOZQ?si=njVz5D6IQ6eWaRzqPsZ8LQ'},{'Deezer':'https://dzr.page.link/4GEj7YSktYdt4UJs6'},{'Apple Music':'https://music.apple.com/us/album/the-cracks-single/1798833081'}]},
   { src: Godspeed, title: 'Godspeed',image:godspeed,alt:'Godspeed cover artwork. A purple rose lying on sheets of paper. The colors seems to be ultra-violet' },
   { src: Epigram, title: 'Epigram',image:epigram,alt:'Epigram cover artwork. A black and white photo of a cross shaped gravestone in a forest' },
   { src: Idols, title: 'Idols',image:idols,alt:'Idols cover artwork. A sepia toned picture of a topless tattooed man getting a tattoo on his left arm. ' },
@@ -129,6 +129,33 @@ function App() {
                 {singleTrack && <img src={loadedPlaylist[0].image} alt={`${loadedPlaylist[0].alt}`} className='w-full h-full object-contain'/>}
                 {!singleTrack && <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-contain'/>}
                 </div>
+
+
+                {singleTrack && loadedPlaylist[0].links && (
+                  <div className="flex flex-row gap-4 justify-center items-center mt-4">
+                    {loadedPlaylist[0].links.map((link, index) => {
+                      const platform = Object.keys(link)[0];
+                      const url = link[platform as keyof typeof link];
+                      return (
+                        <a
+                          key={index}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-yellow-custom text-white m-4"
+                        >
+                          {platform.toLowerCase() === 'spotify' && <FaSpotify className="w-16 h-16" />}
+                          {platform.toLowerCase() === 'apple music' && <FaApple className="w-16 h-16" />}
+                          {platform.toLowerCase() === 'youtube' && <FaYoutube className="w-16 h-16" />}
+                          {platform.toLowerCase() === 'deezer' && <FaDeezer className="w-16 h-16" />}
+
+                        </a>
+                      );
+                    })}
+                  </div>
+                )}
+
+                
                 <div className="w-1/2 max-md:w-full flex flex-col justify-left items-left align-left h-full justify-between grow" >
                 {!singleTrack &&
 
