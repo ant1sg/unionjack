@@ -142,12 +142,12 @@ function App() {
                           href={url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hover:text-yellow-custom text-white m-4"
+                          className="hover:text-yellow-custom text-white m-4 max-md:m-2"
                         >
-                          {platform.toLowerCase() === 'spotify' && <FaSpotify className="w-16 h-16 max-md:w-8 max-md:h-8" />}
-                          {platform.toLowerCase() === 'apple music' && <FaApple className="w-16 h-16 max-md:w-8 max-md:h-8" />}
-                          {platform.toLowerCase() === 'youtube' && <FaYoutube className="w-16 h-16 max-md:w-8 max-md:h-8" />}
-                          {platform.toLowerCase() === 'deezer' && <FaDeezer className="w-16 h-16 max-md:w-8 max-md:h-8" />}
+                          {platform.toLowerCase() === 'spotify' && <FaSpotify className="w-16 h-16 max-md:w-4 max-md:h-4" />}
+                          {platform.toLowerCase() === 'apple music' && <FaApple className="w-16 h-16 max-md:w-4 max-md:h-4" />}
+                          {platform.toLowerCase() === 'youtube' && <FaYoutube className="w-16 h-16 max-md:w-4 max-md:h-4" />}
+                          {platform.toLowerCase() === 'deezer' && <FaDeezer className="w-16 h-16 max-md:w-4 max-md:h-4" />}
 
                         </a>
                       );
