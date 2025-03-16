@@ -22,7 +22,7 @@ import { FaSpotify, FaApple, FaYoutube, FaDeezer } from 'react-icons/fa';
 
 
 const playlist = [
-  { src: TTC, title: 'The cracks',image:thecracks,alt:'The cracks cover artwork. A black and white photo of an old lady in a jumper swater holding her face in her hands. ',links:[{'youtube':'https://www.youtube.com/watch?v=dQw4w9WgXcQ'},{'spotify':'https://open.spotify.com/album/0yo0RJjJHAjv5vNsQ9tOZQ?si=njVz5D6IQ6eWaRzqPsZ8LQ'},{'Deezer':'https://dzr.page.link/4GEj7YSktYdt4UJs6'},{'Apple Music':'https://music.apple.com/us/album/the-cracks-single/1798833081'}]},
+  { src: TTC, title: 'The cracks',image:thecracks,alt:'The cracks cover artwork. A black and white photo of an old lady in a jumper swater holding her face in her hands. ',links:[{'youtube':'https://www.youtube.com/watch?v=5txQ_USL-1M'},{'spotify':'https://open.spotify.com/album/0yo0RJjJHAjv5vNsQ9tOZQ?si=njVz5D6IQ6eWaRzqPsZ8LQ'},{'Deezer':'https://dzr.page.link/4GEj7YSktYdt4UJs6'},{'Apple Music':'https://music.apple.com/us/album/the-cracks-single/1798833081'}]},
   { src: Godspeed, title: 'Godspeed',image:godspeed,alt:'Godspeed cover artwork. A purple rose lying on sheets of paper. The colors seems to be ultra-violet' },
   { src: Epigram, title: 'Epigram',image:epigram,alt:'Epigram cover artwork. A black and white photo of a cross shaped gravestone in a forest' },
   { src: Idols, title: 'Idols',image:idols,alt:'Idols cover artwork. A sepia toned picture of a topless tattooed man getting a tattoo on his left arm. ' },
