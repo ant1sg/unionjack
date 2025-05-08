@@ -125,14 +125,17 @@ function App() {
           <div className='w-full bg-[length:50vw] bg-[url("./assets/orange2.png")]  h-full bg-no-repeat bg-right-bottom  flex flex-row  gap-8 lg:pt-8 items-center overflow-scroll justify-center '>
             
               <div className={`flex ${singleTrack ? 'flex-col' : 'flex-row'} max-md:flex-col gap-4 w-3/4 justify-center items-center`}>
-                <div className="w-1/2 ">
-                {singleTrack && <img src={loadedPlaylist[0].image} alt={`${loadedPlaylist[0].alt}`} className='w-full h-full object-contain'/>}
-                {!singleTrack && <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-contain'/>}
+                <div className="w-1/2 min-lg:max-w-[500px] max-md:w-2/3">
+                <div className={`flex justify-center ${singleTrack ? 'w-full' : ''}`}>
+                  {singleTrack && <img src={loadedPlaylist[0].image} alt={`${loadedPlaylist[0].alt}`} className='w-full max-w-[500px] h-full object-contain'/>}
+                  {!singleTrack && <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-contain'/>}
+                </div>
+               
                 </div>
 
 
                 {singleTrack && loadedPlaylist[0].links && (
-                  <div className="flex flex-row gap-4 justify-center items-center mt-4">
+                  <div className="flex flex-col gap-4 justify-center items-center mt-4 w">
                     {loadedPlaylist[0].links.map((link, index) => {
                       const platform = Object.keys(link)[0];
                       const url = link[platform as keyof typeof link];
@@ -142,16 +145,26 @@ function App() {
                           href={url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hover:text-yellow-custom text-white m-4 max-md:m-2"
+                          className='hover:text-yellow-custom hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase leading-8 flex items-center w-full'
                         >
-                          {platform.toLowerCase() === 'spotify' && <FaSpotify className="w-16 h-16 max-md:w-4 max-md:h-4" />}
-                          {platform.toLowerCase() === 'apple music' && <FaApple className="w-16 h-16 max-md:w-4 max-md:h-4" />}
-                          {platform.toLowerCase() === 'youtube' && <FaYoutube className="w-16 h-16 max-md:w-4 max-md:h-4" />}
-                          {platform.toLowerCase() === 'deezer' && <FaDeezer className="w-16 h-16 max-md:w-4 max-md:h-4" />}
+                          {platform.toLowerCase() === 'spotify' && <p className='text-[2rem] max-md:text-[1rem] flex flex-row items-center gap-4  '><FaSpotify className="w-16 h-16 max-lg:w-10 max-lg:h-10 max-md:w-8 max-md:h-8" /> Spotify</p>}
+                          {platform.toLowerCase() === 'apple music' && <p className='text-[2rem] max-md:text-[1rem]   flex flex-row items-center gap-4  '><FaApple className="w-16 h-16 max-lg:w-10 max-lg:h-10 max-md:w-8 max-md:h-8" /> Apple music</p>}
+                          {platform.toLowerCase() === 'youtube' && <p className='text-[2rem] max-md:text-[1rem] flex flex-row items-center gap-4  '><FaYoutube className="w-16 h-16 max-lg:w-10 max-lg:h-10 max-md:w-8 max-md:h-8" /> Youtube</p>}
+                          {platform.toLowerCase() === 'deezer' && <p className='text-[2rem] max-md:text-[1rem] flex flex-row items-center gap-4  '><FaDeezer className="w-16 h-16 max-lg:w-10 max-lg:h-10 max-md:w-8 max-md:h-8" /> Deezer</p>}
 
                         </a>
                       );
                     })}
+                      <button 
+                      onClick={clickContact}
+                      className='w-full hover:text-yellow-custom hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase text-[2rem] 
+                      max-md:text-[1.5rem] leading-8 flex items-center gap-2'
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-16 h-16 max-lg:w-10 max-lg:h-10 max-md:w-8 max-md:h-8">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                      </svg>
+                      <p className='leading-8'>Contact us</p>
+                    </button>
                   </div>
                 )}
 
@@ -178,6 +191,7 @@ function App() {
                     </ul>
                   
                   </div></>}
+                  {!singleTrack &&
                   <div className={`h-full flex items-end mt-20 max-md:mt-5 ${singleTrack ? 'justify-center' :'max-md:justify-center'}`}>
                     <button 
                       onClick={clickContact}
@@ -190,6 +204,7 @@ function App() {
                       <p className='leading-8'>Contact us</p>
                     </button>
                   </div>
+                  }
                 </div>
                 
                 
