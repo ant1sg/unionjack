@@ -27,7 +27,7 @@ const playlist = [
   { src: Godspeed, title: 'Godspeed',image:godspeed,alt:'Godspeed cover artwork. A purple rose lying on sheets of paper. The colors seems to be ultra-violet' },
   { src: Epigram, title: 'Epigram',image:epigram,alt:'Epigram cover artwork. A black and white photo of a cross shaped gravestone in a forest' },
   { src: Idols, title: 'Idols',image:idols,alt:'Idols cover artwork. A sepia toned picture of a topless tattooed man getting a tattoo on his left arm. ' },
-  { src: SocialGame, title: 'Social Game',image:socialgame,alt:'Social Game cover artwork. A bloody fist standing right up in the air on a white background. ',links:[{'Deezer':'https://dzr.page.link/knA5pjVv3DTT7xm16'},{'Apple Music':'https://music.apple.com/fr/album/social-game-single/1813021286'}]},
+  { src: SocialGame, title: 'Social Game',image:socialgame,alt:'Social Game cover artwork. A bloody fist standing right up in the air on a white background. ',links:[{'Deezer':'https://dzr.page.link/knA5pjVv3DTT7xm16'},{'Apple Music':'https://music.apple.com/fr/album/social-game-single/1813021286'},{'Spotify':'https://open.spotify.com/intl-fr/track/69UTGTFkEf6IQYIsLRIsNo?si=d29746d16a134e04'}]},
   { src: Distillorama, title: 'Distillorama',image:distillorama,alt:'Distillorama cover artwork. An old black Favorit typewriter on a white background' },
   { src: GoldAndDiamonds, title: 'Gold & Diamonds',image:AcidSerenade,alt:'' },
   { src: DissonantRadio, title: 'Dissonant Radio',image:AcidSerenade,alt:'' },
