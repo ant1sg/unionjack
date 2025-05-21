@@ -58,34 +58,7 @@ function App() {
     }
   }, []);
 
-  // Track song changes
-  const handleClickTrack = (index: number) => {
-    console.log("Playing song "+index);
-    
-    setTrackIndex(index);
-    // Force replay if same track
-    if (index === currentTrack) {
-      const audioElement = document.getElementsByClassName('rhap_main-controls-button')[1] as HTMLButtonElement;
-      const isPlaying = audioElement?.getAttribute('aria-label') === 'Pause';
-      
-      if (audioElement && !isPlaying) {
-        audioElement.click();
-        // Push track change event to Matomo
-        window._mtm.push({
-          'event': 'songChange',
-          'songTitle': loadedPlaylist[index].title
-        });
-      }
-    }
-    else{
-      // Push track change event to Matomo
-      window._mtm.push({
-        'event': 'songChange',
-        'songTitle': loadedPlaylist[index].title
-      });
-    }
-    
-  }
+  
   const clickContact = () => {
     window._mtm.push({
       'event': 'contact',
