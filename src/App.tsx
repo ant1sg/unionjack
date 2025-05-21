@@ -163,7 +163,7 @@ function App() {
                       </li>
                     ))}
                     </ul> */}
-                    <div className="flex flex-col gap-4 justify-center items-center mt-4">
+                    <div className="flex flex-col gap-4 justify-center items-center mt-4 max-md:mt-1">
                     <a href="https://www.beer-records.com/shop/union-jack-acid-serenades/" target="_blank" rel="noopener noreferrer" className='hover:text-yellow-custom hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase leading-8 flex items-center w-full' >                    
                       <p className='text-[1.5rem] max-md:text-[1rem] flex flex-row items-center gap-4  '><FaCompactDisc className="w-8 h-8" /> Buy 12" vinyl</p></a>
                     <a href="https://unionjack.bandcamp.com/album/acid-serenades" target="_blank" rel="noopener noreferrer" className='hover:text-yellow-custom hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase leading-8 flex items-center w-full' >
@@ -177,7 +177,7 @@ function App() {
                     </div>
                   </div></>}
                   {!singleTrack &&
-                  <div className={`h-full flex items-end mt-20 max-md:mt-5 justify-center`}>
+                  <div className={`h-full flex items-end mt-20 max-md:mt-2 justify-center`}>
                     <button 
                       onClick={clickContact}
                       className='hover:text-yellow-custom hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase text-[2rem] 
