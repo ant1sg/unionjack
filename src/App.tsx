@@ -149,7 +149,7 @@ function App() {
                           className='hover:text-yellow-custom hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase leading-8 flex items-center w-full'
                         >
                           {platform.toLowerCase() === 'spotify' && <p className='text-[2rem] max-md:text-[1rem] flex flex-row items-center gap-4  '><FaSpotify className="w-16 h-16 max-lg:w-10 max-lg:h-10 max-md:w-8 max-md:h-8" /> Spotify</p>}
-                          {platform.toLowerCase() === 'apple music${singleTrack ? 'justify-center' :'max-md:' && <p className='text-[2rem] max-md:text-[1rem]   flex flex-row items-center gap-4  '><FaApple className="w-16 h-16 max-lg:w-10 max-lg:h-10 max-md:w-8 max-md:h-8" /> Apple music</p>}
+                          {platform.toLowerCase() === 'apple music' && <p className='text-[2rem] max-md:text-[1rem]   flex flex-row items-center gap-4  '><FaApple className="w-16 h-16 max-lg:w-10 max-lg:h-10 max-md:w-8 max-md:h-8" /> Apple music</p>}
                           {platform.toLowerCase() === 'youtube' && <p className='text-[2rem] max-md:text-[1rem] flex flex-row items-center gap-4  '><FaYoutube className="w-16 h-16 max-lg:w-10 max-lg:h-10 max-md:w-8 max-md:h-8" /> Youtube</p>}
                           {platform.toLowerCase() === 'deezer' && <p className='text-[2rem] max-md:text-[1rem] flex flex-row items-center gap-4  '><FaDeezer className="w-16 h-16 max-lg:w-10 max-lg:h-10 max-md:w-8 max-md:h-8" /> Deezer</p>}
 
