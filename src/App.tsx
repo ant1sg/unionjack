@@ -19,7 +19,7 @@ import distillorama from './assets/distillorama.jpg';
 import godspeed from './assets/godspeed.jpg';
 import idols from './assets/idols.jpg';
 import socialgame from './assets/socialgame.jpg';
-import { FaSpotify, FaApple, FaYoutube, FaDeezer } from 'react-icons/fa';
+import { FaSpotify, FaApple, FaYoutube, FaDeezer, FaBandcamp, FaRecordVinyl, FaCompactDisc } from 'react-icons/fa';
 
 
 const playlist = [
@@ -129,7 +129,7 @@ function App() {
                 <div className="w-1/2 min-lg:max-w-[500px] max-md:w-2/3">
                 <div className={`flex justify-center ${singleTrack ? 'w-full' : ''}`}>
                   {singleTrack && <img src={loadedPlaylist[0].image} alt={`${loadedPlaylist[0].alt}`} className='w-full max-w-[500px] h-full object-contain'/>}
-                  {!singleTrack && <img src={AcidSerenade} alt='Acid Serenade' className='w-full h-full object-contain'/>}
+                  {!singleTrack && <img src={AcidSerenade} alt='Acid Serenade' className='w-3/4 h-full object-contain'/>}
                 </div>
                
                 </div>
@@ -158,7 +158,7 @@ function App() {
                     })}
                       <button 
                       onClick={clickContact}
-                      className='w-full hover:text-yellow-custom hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase text-[2rem] 
+                      className='w-full hover:text-yellow-custom text-center hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase text-[2rem] 
                       max-md:text-[1.5rem] leading-8 flex items-center gap-2'
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-16 h-16 max-lg:w-10 max-lg:h-10 max-md:w-8 max-md:h-8">
@@ -173,11 +173,11 @@ function App() {
                 <div className="w-1/2 max-md:w-full flex flex-col justify-left items-left align-left h-full justify-between grow" >
                 {!singleTrack &&
 
-                  <><div className='p-4 justify-center uppercase text-clamp-4xl font-anton text-white leading-[1.2] max-lg:text-[1.5rem] max-md:text-[1rem]'>
-                    <p>Listen to our upcoming album "Acid Serenades"</p>
+                  <><div className='p-4 justify-center  uppercase text-clamp-4xl font-anton text-white leading-[1.2] text-[1.95rem] max-lg:text-[1.5rem] max-md:text-[1rem]'>
+                    <p className='text-center w-full'>Listen to our new album "Acid Serenades"</p>
                   </div>
                    <div className="p-4 align-left list-none">
-                    <ul>
+                    {/* <ul>
                     {loadedPlaylist.map((track, index) => (
                       <li key={index}>
                         <button
@@ -189,11 +189,22 @@ function App() {
                       </button>
                       </li>
                     ))}
-                    </ul>
-                  
+                    </ul> */}
+                    <div className="flex flex-col gap-4 justify-center items-center mt-4">
+                    <a href="https://www.beer-records.com/shop/union-jack-acid-serenades/" target="_blank" rel="noopener noreferrer" className='hover:text-yellow-custom hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase leading-8 flex items-center w-full' >                    
+                      <p className='text-[1.5rem] max-md:text-[1rem] flex flex-row items-center gap-4  '><FaCompactDisc className="w-8 h-8" /> Buy 12" vinyl</p></a>
+                    <a href="https://unionjack.bandcamp.com/album/acid-serenades" target="_blank" rel="noopener noreferrer" className='hover:text-yellow-custom hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase leading-8 flex items-center w-full' >
+                      <p className='text-[1.5rem] max-md:text-[1rem] flex flex-row items-center gap-4  '><FaBandcamp className="w-8 h-8" /> Bandcamp</p></a>
+                    <a href="https://open.spotify.com/intl-fr/artist/2e4FKa4Paf68dTcW3wozsc?si=dsKwUCriT0uTIX44nMxbPA" target="_blank" rel="noopener noreferrer" className='hover:text-yellow-custom hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase leading-8 flex items-center w-full' >                    
+                        <p className='text-[1.5rem] max-md:text-[1rem] flex flex-row items-center gap-4  '><FaSpotify className="w-8 h-8" /> Spotify</p></a>
+                    <a href="https://music.apple.com/fr/artist/union-jack/1154548251" target="_blank" rel="noopener noreferrer" className='align-center hover:text-yellow-custom hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase leading-8 flex items-center w-full' >
+                      <p className='text-[1.5rem] max-md:text-[1rem] flex flex-row items-center gap-4  '><FaApple className="w-8 h-8" /> Apple music</p></a> 
+                    <a href="https://www.deezer.com/fr/artist/75027712" target="_blank" rel="noopener noreferrer" className='hover:text-yellow-custom hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase leading-8 flex items-center w-full' >
+                      <p className='text-[1.5rem] max-md:text-[1rem] flex flex-row items-center gap-4  '><FaDeezer className="w-8 h-8" /> Deezer</p></a>
+                    </div>
                   </div></>}
                   {!singleTrack &&
-                  <div className={`h-full flex items-end mt-20 max-md:mt-5 ${singleTrack ? 'justify-center' :'max-md:justify-center'}`}>
+                  <div className={`h-full flex items-end mt-20 max-md:mt-5 justify-center`}>
                     <button 
                       onClick={clickContact}
                       className='hover:text-yellow-custom hover:bg-transparent hover:border-yellow-custom border-2 border-black bg-white text-black px-4 py-2 font-anton uppercase text-[2rem] 
